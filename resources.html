@@ -1,0 +1,133 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resources | Money Behavior Strategy™</title><meta name="description" content="Explore the ideas behind Money Behavior Strategy™, including the Behavior Bridge white paper and the Money Pattern Quiz."><link rel="icon" type="image/svg+xml" href="favicon.svg"><meta property="og:title" content="Resources | Money Behavior Strategy™"><meta property="og:image" content="assets/social-card.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body class="editorial-site">
+<header class="site-header"><a class="brand" href="index.html"><strong>Money Behavior Strategy™</strong></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="index.html#idea">The Idea</a><a href="index.html#patterns">Patterns</a><a href="about.html">About</a><a href="resources.html">Resources</a><a class="nav-button consultation-link" href="index.html#work-with-me">Work With Me 1:1</a></nav></header>
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Resources</p>
+    <h1>Explore the idea.<br>Understand your pattern.</h1>
+    <p>Start with the resource that answers the question you have today.</p>
+  </div>
+</section>
+
+<div class="ribbon">See the Pattern <span>✦</span> Understand It <span>✦</span> Change What Happens Next <span>✦</span> Build What Lasts</div>
+
+<section class="section">
+  <div class="container">
+    
+    <div class="resource-grid">
+      <div class="resource-card"><p class="eyebrow">Want to understand the idea?</p><h3>The Behavior Bridge™</h3><p>Why knowing what to do does not always lead to doing it.</p><a class="text-link" href="assets/the-behavior-bridge-white-paper.pdf">Read the White Paper →</a></div>
+      <div class="resource-card"><p class="eyebrow">Want to understand yourself?</p><h3>Money Pattern Quiz</h3><p>Find the pattern most likely to shape your money choices.</p><a class="text-link" href="money-pattern-quiz.html">Take the Quiz →</a></div>
+      <div class="resource-card"><p class="eyebrow">Want to see where you are?</p><h3>Money Health Check</h3><p>A quick, honest check-in on where your money habits stand right now.</p><a class="text-link" href="money-health-check.html">Take the Check →</a></div>
+      <div class="resource-card"><p class="eyebrow">Articles</p><h3>Money Behavior Notes</h3><p>Simple ideas and practical steps for changing everyday money habits.</p><span class="coming">Articles coming soon.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tool">
+  <div class="container tool-grid">
+    <div>
+      <p class="eyebrow">The practical tool</p>
+      <h2>70/10/10/10</h2>
+      <p>A simple way to give every dollar a job: living, savings, investing, and giving. It is one tool inside Money Behavior Strategy™ — not the whole picture.</p>
+    </div>
+    <div class="simulator">
+      <label for="simAmount">Try it with a real number.</label>
+      <div class="sim-input-row">
+        <span class="sim-dollar">$</span>
+        <input type="number" id="simAmount" value="100" min="0" step="1" inputmode="decimal">
+      </div>
+      <div class="ratio" id="simRatio">
+        <div><strong id="simLiving">$70</strong><span>Living</span></div>
+        <div><strong id="simSavings">$10</strong><span>Savings</span></div>
+        <div><strong id="simInvesting">$10</strong><span>Investing</span></div>
+        <div><strong id="simGiving">$10</strong><span>Giving</span></div>
+      </div>
+      <p class="sim-caption">Every dollar, given a job. Change the number and watch it move.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section daily-truth">
+  <div class="container">
+    <p class="eyebrow">Come Back Tomorrow</p>
+    <h2>Today's Money Truth</h2>
+    <p>A new one every day. Tap the card.</p>
+    <div class="truth-card" id="truthCard" tabindex="0" role="button" aria-label="Tap to reveal today's money truth">
+      <div class="truth-inner">
+        <div class="truth-front"><span>Tap to reveal</span></div>
+        <div class="truth-back"><p id="truthText"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section final-cta">
+  <div class="container">
+    <p class="eyebrow">Personal support</p>
+    <h2>Resources help you learn.<br>1:1 help is where we work on your money together.</h2>
+    <a class="button consultation-link" href="index.html#work-with-me">Work With Me 1:1</a>
+    <p class="microcopy">Not ready yet? <a class="booking-link" href="#">Schedule a Free Intro Call.</a></p>
+  </div>
+</section>
+
+</main>
+<footer><strong>Money Behavior Strategy™</strong><div><a href="index.html">Home</a><a href="about.html">About</a><a href="money-pattern-quiz.html">Pattern Quiz</a><a href="money-health-check.html">Money Health Check</a></div><small>© 2026 Rukiyah Polk.</small></footer>
+<script src="site.js"></script>
+<script>
+// Dollar simulator
+const simAmount = document.getElementById('simAmount');
+function updateSim(){
+  let val = parseFloat(simAmount.value);
+  if(isNaN(val) || val < 0) val = 0;
+  document.getElementById('simLiving').textContent = '$' + (val*0.70).toFixed(0);
+  document.getElementById('simSavings').textContent = '$' + (val*0.10).toFixed(0);
+  document.getElementById('simInvesting').textContent = '$' + (val*0.10).toFixed(0);
+  document.getElementById('simGiving').textContent = '$' + (val*0.10).toFixed(0);
+}
+if(simAmount){ simAmount.addEventListener('input', updateSim); updateSim(); }
+
+// Daily Money Truth — deterministic pick by day of year, changes daily
+const moneyTruths = [
+  "You are not bad with money. You are running a pattern nobody taught you how to break.",
+  "A budget is not a punishment. It is a plan that already knows what it is doing.",
+  "You don't need more money to start. You need a job for the money you already have.",
+  "Avoiding the bill doesn't make it smaller. It just makes the moment you open it heavier.",
+  "Every dollar you've ever spent taught you something about what you actually value.",
+  "Feeling safe with money is not a luxury. It is the foundation everything else stands on.",
+  "The plan doesn't have to be perfect. It just has to exist.",
+  "You can love someone and still say no to lending them money.",
+  "Checking your balance is not the same as judging yourself for what's in it.",
+  "Old money habits were protection once. They just don't fit anymore.",
+  "Progress is not a straight line. A missed week is not a failed plan.",
+  "You are allowed to spend on joy. Giving every dollar a job includes that one too.",
+  "Debt is a math problem with an emotional weight attached. Both parts deserve attention.",
+  "Knowing what to do and doing it are two different skills. You might already have one.",
+  "A pattern you can name is a pattern you can start to change.",
+  "The goal isn't to never feel afraid about money. It's to have a plan even when you do.",
+  "Your worth was never tied to your bank balance. It just felt that way for a while.",
+  "Small, boring, repeated actions build more security than one big dramatic fix.",
+  "You don't have to earn more to feel differently about what you already have.",
+  "Rest is not the opposite of progress. It's part of how progress holds.",
+  "The story you were taught about money is not the only one available to you.",
+  "Asking for help with money is not a failure. It's a plan working as intended.",
+  "You can hold structure and softness at the same time. That's what a real plan does.",
+  "Comparison steals clarity. Your plan only has to work for your actual life.",
+  "The version of you that avoids the app and the version that checks it calmly are not that far apart.",
+  "A dollar with a job changes everything — not because it's magic, but because it's decided.",
+  "You get to redefine what 'doing well with money' means for you.",
+  "Consistency beats intensity. Every time.",
+  "The bridge between knowing and doing is built one small action at a time.",
+  "You are not starting over. You are starting from exactly where you actually are."
+];
+const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0)) / 86400000);
+const todayTruth = moneyTruths[dayOfYear % moneyTruths.length];
+const truthText = document.getElementById('truthText');
+const truthCard = document.getElementById('truthCard');
+if(truthText) truthText.textContent = todayTruth;
+if(truthCard){
+  function flipTruth(){ truthCard.classList.toggle('flipped'); }
+  truthCard.addEventListener('click', flipTruth);
+  truthCard.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); flipTruth(); } });
+}
+</script></body></html>
