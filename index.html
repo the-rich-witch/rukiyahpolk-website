@@ -4,6 +4,10 @@
 .story-image{padding:0 0 2rem;}
 .story-image .container{max-width:1100px;margin:0 auto;padding:0 1rem;}
 .story-image img{display:block;width:100%;height:auto;border-radius:24px;}
+@media(max-width:580px){
+  .bridge-picker{display:grid!important;grid-template-columns:1fr!important;gap:14px!important;}
+  .bridge-option{width:100%!important;white-space:normal!important;padding:16px 20px!important;}
+}
 </style></head><body class="editorial-site">
 <header class="site-header"><a class="brand" href="index.html"><strong>Money Behavior Strategy™</strong></a><button class="menu" aria-expanded="false">Menu</button><nav><a href="#idea">The Idea</a><a href="#patterns">Patterns</a><a href="about.html">About</a><a href="resources.html">Resources</a><a class="nav-button consultation-link" href="#work-with-me">Work With Me 1:1</a></nav></header>
 <main>
@@ -22,7 +26,7 @@
 
 <div class="ribbon">See the Pattern <span>✦</span> Understand It <span>✦</span> Change What Happens Next <span>✦</span> Build What Lasts</div>
 
-<section class="section big-idea" id="idea">
+<section class="section big-idea" id="idea" style="padding-bottom:2rem;">
   <div class="container">
     <h2>Money problems aren’t always about the math.</h2>
     <p>Maybe no one ever taught you what to do with your money. Maybe you tried a plan that didn't fit your life. Or maybe you keep doing the same thing, even when you want something different.</p>
@@ -40,9 +44,9 @@
     <h2>Where are you with your money right now?</h2>
     <p>Pick the one that sounds most like you.</p>
     <div class="bridge-picker" id="bridgePicker">
-      <button class="bridge-option" data-state="chaos"><strong style="display:block;">I feel lost</strong><span style="display:block;margin-top:.35rem;font-weight:400;line-height:1.35;">I don't know where to start.</span></button>
-      <button class="bridge-option" data-state="middle"><strong style="display:block;">I'm working on it</strong><span style="display:block;margin-top:.35rem;font-weight:400;line-height:1.35;">Some things are getting better, but I'm not where I want to be.</span></button>
-      <button class="bridge-option" data-state="clarity"><strong style="display:block;">I have a plan</strong><span style="display:block;margin-top:.35rem;font-weight:400;line-height:1.35;">I mostly know what to do with my money.</span></button>
+      <button class="bridge-option" data-state="chaos" style="display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.25;"><strong>I feel lost</strong><span style="margin-top:.4rem;font-weight:400;">I don't know where to start.</span></button>
+      <button class="bridge-option" data-state="middle" style="display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.25;"><strong>I'm working on it</strong><span style="margin-top:.4rem;font-weight:400;">Some things are getting better, but I'm not where I want to be.</span></button>
+      <button class="bridge-option" data-state="clarity" style="display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.25;"><strong>I have a plan</strong><span style="margin-top:.4rem;font-weight:400;">I mostly know what to do with my money.</span></button>
     </div>
     <div class="bridge-result" id="bridgeResult"></div>
   </div>
