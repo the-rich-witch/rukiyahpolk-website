@@ -28,7 +28,7 @@ later, as its own campaign.**
 
 The Behavior Bridge Group cohort popup and top banner have been fully
 removed from the evergreen site. "Work With Me 1:1" is the single primary
-CTA sitewide, with the free Intro Call offered as the lower-commitment
+CTA sitewide, with free resources offered as the lower-commitment
 fallback everywhere. When the cohort is ready to launch, build it as a
 separate landing page/campaign rather than reintroducing it into this
 site's core pages.
@@ -41,7 +41,6 @@ site's core pages.
 Open `site.js` and replace the two placeholder URLs at the top:
 
 ```js
-const INTRO_CALL_URL = '#';      // free Intro Call scheduler
 const CONSULTATION_URL = '#';    // paid one-on-one booking/checkout
 ```
 
@@ -151,9 +150,26 @@ hosting. Worth revisiting later, not needed to launch.
 
 The two quiz result pages (`money-pattern-quiz.html` and
 `money-health-check.html`) still offer their own contextual next step
-right after the result — a free Intro Call after the Pattern Quiz, and
+right after the result — free resources after the Pattern Quiz, and
 "Book Your Consultation" after the Money Health Check — rather than
 leading with "Work With Me 1:1" like every other page. This was a
 deliberate choice (soft next-step right after a free tool, not a hard
 pitch), but worth a second look to confirm it still fits the current offer
 sequence.
+
+
+## Cashvertising / friction-reduction update
+- Added `work-with-me.html` as a guided decision page so ready visitors do not have to figure out which paid path fits.
+- Current paths: Money Behavior Strategy™ Session; Founding Client Experience (8 spots); free resources for people who want to learn first.
+- Homepage Work With Me section now self-sorts visitors by their actual need.
+- Homepage money-pattern copy now shows recognizable behavior instead of leading with emotion labels.
+- The Money Behavior Strategy™ Session Square URL is live in `site.js`. Add the Founding Client URL using `FOUNDING_URL` once enrollment is finalized.
+- Founding Client pricing/session cadence remains intentionally unpublished on the live page until the program design is finalized.
+
+## Founding Client checkout handoff — Aug 21, 2026
+
+- Founding Client Experience price: $597 pay in full; payment plan: 2 payments of $325; planned standard price: $797; 8 Founding Client spots.
+- Added `founding-client-welcome.html` as the post-purchase redirect page for Square.
+- Square redirect URL after deployment: `https://rukiyahpolk.com/founding-client-welcome.html`
+- The page is intentionally `noindex,nofollow` and is not linked in the public navigation.
+- The Founding Client payment link is still not wired into `site.js`; add it to `FOUNDING_URL` after Square creates the final payment link.
