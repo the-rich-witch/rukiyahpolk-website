@@ -331,7 +331,9 @@ footer{background:var(--sage-light)}
 .hero-cta-note,.cta-reassurance,.cta-help{font-size:.88rem;color:var(--muted);max-width:620px}
 .hero.hero-split .hero-cta-note{color:rgba(255,255,255,.72);margin-top:12px}
 .sales-hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-.sales-hero .cta-reassurance{margin-top:14px;color:var(--muted)}
+.sales-hero .cta-reassurance{margin-top:14px;color:rgba(255,255,255,.65)}
+.sales-hero .button.outline,.final-cta .button.outline{border-color:rgba(255,255,255,.6);color:white!important}
+.sales-hero .button.outline:hover,.final-cta .button.outline:hover{background:white;color:var(--emerald-deep)!important}
 
 .method-demo{background:linear-gradient(180deg,var(--ivory),#edf0e6)}
 .demo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px}
@@ -419,6 +421,8 @@ footer{background:var(--sage-light)}
 .mbs-chat-launcher{border:0;border-radius:999px;background:var(--emerald-deep);color:#fff;font-weight:700;padding:14px 18px;box-shadow:0 12px 32px rgba(0,0,0,.2);cursor:pointer}
 .mbs-chat-panel{position:absolute;right:0;bottom:58px;width:min(380px,calc(100vw - 28px));max-height:min(620px,72vh);background:#fff;border:1px solid rgba(23,79,60,.15);border-radius:20px;box-shadow:0 24px 70px rgba(0,0,0,.25);overflow:hidden;color:var(--ink)}
 .mbs-chat-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;background:var(--emerald-deep);color:#fff}
+.mbs-chat-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;flex:0 0 44px;border:2px solid rgba(255,255,255,.72)}
+.mbs-chat-title{flex:1;min-width:0}
 .mbs-chat-head strong{display:block;font-family:var(--serif);font-size:1.1rem}
 .mbs-chat-head span{display:block;font-size:.72rem;color:rgba(255,255,255,.75);margin-top:2px}
 .mbs-chat-close{border:0;background:transparent;color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;padding:4px 6px}
@@ -433,3 +437,21 @@ footer{background:var(--sage-light)}
 .mbs-chat-foot{padding:12px 16px;border-top:1px solid rgba(23,79,60,.12);background:#fff}
 .mbs-chat-foot a{color:var(--emerald-deep);font-size:.86rem;font-weight:700}
 @media(max-width:700px){.support-actions{flex-direction:column}.support-actions .button{width:100%;text-align:center}.mbs-chat{right:12px;bottom:12px}.mbs-chat-panel{width:calc(100vw - 24px)}}
+
+/* Chatbot identity + purchase-intent actions */
+.mbs-chat-badge{display:grid;place-items:center;background:#fff;color:var(--emerald-deep);font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.mbs-chat-intent-options{margin-top:14px;padding-bottom:12px;border-bottom:1px solid rgba(23,79,60,.12)}
+.mbs-chat-intent-options button{background:var(--emerald-deep);color:#fff;border-color:var(--emerald-deep);text-align:center}
+.mbs-chat-intent-options button:hover{background:#123f31;color:#fff}
+
+/* Conceptual bridge moved below the opening journey so the first image visitors see is Rukiyah teaching. */
+.concept-bridge{background:var(--sand)}
+.concept-bridge-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(360px,1.2fr);gap:6vw;align-items:center}
+.concept-bridge-copy p:not(.eyebrow){max-width:620px;font-size:1.05rem;color:var(--muted)}
+.concept-bridge img{width:100%;border-radius:18px;box-shadow:0 20px 45px rgba(23,24,20,.14)}
+@media(max-width:980px){.concept-bridge-grid{grid-template-columns:1fr}.concept-bridge img{margin-top:12px}}
+@media(max-width:580px){.hero-visual img{object-fit:cover;object-position:center 35%}}
+
+/* Founding Client pilot enrollment */
+.enrollment-wrap{max-width:780px}.enrollment-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(22px,5vw,42px);box-shadow:0 18px 50px rgba(23,24,20,.08);margin-bottom:100px}
+#founding-enrollment-form{display:grid;gap:20px}#founding-enrollment-form>label{display:grid;gap:8px;font-weight:700;color:var(--emerald-deep)}#founding-enrollment-form input[type="text"],#founding-enrollment-form input[type="email"],#founding-enrollment-form input[type="tel"]{width:100%;padding:13px 14px;border:1px solid rgba(23,79,60,.28);border-radius:10px;font:inherit;color:var(--ink);background:#fff}#founding-enrollment-form fieldset{border:1px solid rgba(23,79,60,.18);border-radius:12px;padding:16px}#founding-enrollment-form legend{font-weight:700;color:var(--emerald-deep);padding:0 6px}.radio-line{display:inline-flex!important;align-items:center;gap:8px;margin:8px 22px 0 0;font-weight:500!important}.check-line{grid-template-columns:auto 1fr!important;align-items:flex-start;gap:10px!important;font-weight:500!important;line-height:1.5}.check-line input{margin-top:5px}.form-status{margin:0;font-weight:600}.setup-note{margin-top:18px;font-size:.82rem;color:var(--muted)}.setup-note code{font-size:.8rem}#enrollment-success h2{margin-top:4px}#enrollment-success ol{padding-left:22px;line-height:1.7}
