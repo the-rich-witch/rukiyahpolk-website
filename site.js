@@ -28,15 +28,26 @@ if (menu && nav) {
   const assistant = document.createElement('div');
   assistant.className = 'mbs-chat';
   assistant.innerHTML = `
-    <button class="mbs-chat-launcher" type="button" aria-expanded="false" aria-controls="mbs-chat-panel">Questions?</button>
+    <button class="mbs-chat-launcher" type="button" aria-expanded="false" aria-controls="mbs-chat-panel">Find Something</button>
     <section class="mbs-chat-panel" id="mbs-chat-panel" aria-label="Money Behavior Strategy quick answers" hidden>
       <div class="mbs-chat-head">
         <div class="mbs-chat-avatar mbs-chat-badge" aria-hidden="true">MBS</div>
-        <div class="mbs-chat-title"><strong>What can I help you with?</strong><span>Quick answers · Money Behavior Strategy™</span></div>
+        <div class="mbs-chat-title"><strong>What are you looking for?</strong><span>Find a resource or get a quick answer</span></div>
         <button class="mbs-chat-close" type="button" aria-label="Close quick answers">×</button>
       </div>
       <div class="mbs-chat-body" aria-live="polite">
-        <div class="mbs-chat-message bot">Hi. I’m the Money Behavior Strategy™ quick-answer tool. I can answer common questions about services, booking, payment, and what to expect. I’m not Rukiyah or a human, and I don’t give personal money advice.</div>
+        <div class="mbs-chat-message bot">Tell me what you’re looking for. I can help you find resources, the workbook, quizzes, articles, services, booking information, and common answers. I’m an automated site tool, not Rukiyah or a human, and I don’t give personal money advice.</div>
+        <form class="mbs-chat-search" role="search">
+          <input type="search" aria-label="What are you looking for?" placeholder="Try: workbook, budget, quiz…">
+          <button type="submit">Find</button>
+        </form>
+        <p class="mbs-chat-search-hint">Type a word or choose a shortcut below.</p>
+        <div class="mbs-chat-options">
+          <button type="button" data-chat="workbook">Find the 5 Steps workbook</button>
+          <button type="button" data-chat="free">Show me free resources</button>
+          <button type="button" data-chat="quiz">Help me find a quiz</button>
+          <button type="button" data-chat="articles">Show me money articles</button>
+        </div>
         <div class="mbs-chat-options mbs-chat-intent-options">
           <button type="button" data-chat="ready-session">I’m ready for the $247 session</button>
           <button type="button" data-chat="ready-founding">I’m ready for the Founding Client Pilot</button>
@@ -67,6 +78,10 @@ if (menu && nav) {
   const body = assistant.querySelector('.mbs-chat-body');
 
   const answers = {
+    workbook: `You can find <strong>5 Steps to Winning Financially</strong> on the Resources page. It’s a self-guided illustrated digital workbook. <a href="resources.html#workbook">See the workbook →</a>`,
+    free: `Start on the Resources page for the Money Pattern Quiz, Money Health Check, Behavior Bridge™ white paper, 70/10/10/10 tool, and Money Behavior Notes. <a href="resources.html">See free resources →</a>`,
+    quiz: `If you want to understand a repeating money pattern, try the <a href="money-pattern-quiz.html">Money Pattern Quiz →</a>. If you want a quick check-in on where your money habits stand, try the <a href="money-health-check.html">Money Health Check →</a>`,
+    articles: `Money Behavior Notes has short, plain-language articles about spending, budgets, and getting back on track. <a href="notes.html">Read Money Behavior Notes →</a>`,
     'ready-session': `<strong>You can book now.</strong> The Money Behavior Strategy™ Session is $247 for one focused 60-minute session. Payment is required when you book. <a href="${SESSION_URL}">Choose your time and book the $247 session →</a>`,
     'ready-founding': `<strong>You’re ready to become a Founding Client.</strong> The Founding Client Experience is $597 and limited to 8 Founding Clients. Start with the short enrollment form. Rukiyah personally sets up each Founding Client account, then you’ll receive payment instructions and next steps. <a href="${FOUNDING_URL}">Start my enrollment →</a>`,
     compare: `If you have <strong>one specific money problem you want help with now</strong>, the $247 Money Behavior Strategy™ Session is the problem-focused option: one 60-minute session. If you are dealing with <strong>deeper or repeating money patterns</strong>, the $597 Founding Client Pilot is the pattern-focused option: four weeks, four 60-minute sessions, a Mini Money Binder, and My Money Playbook™. This pilot is limited to 8 clients and officially launches September 22, 2026. Each Founding Client completes four private one-on-one sessions on their own schedule. <a href="${workLink}#compare">Compare both options →</a>`,
@@ -83,6 +98,39 @@ if (menu && nav) {
     before: `Yes. If you understand the $247 session and are ready, you can book it without an extra call. If you are ready for the Founding Client Experience, <a href="${FOUNDING_URL}">start the short enrollment form →</a>. For any other question first, <a href="${EMAIL}">contact the support team →</a>`,
     human: `Need more help? Contact the Money Behavior Strategy support team. This quick-answer tool is automated, so a real person will pick up from here. <a href="${EMAIL}">Contact the support team →</a>`
   };
+
+
+  const searchForm = assistant.querySelector('.mbs-chat-search');
+  const searchInput = searchForm ? searchForm.querySelector('input') : null;
+  function searchAnswer(query){
+    const q = (query || '').trim().toLowerCase();
+    if(!q) return 'Type what you’re looking for, like “workbook,” “budget,” “quiz,” or “session.”';
+    if(/workbook|5 steps|winning financially|etsy/.test(q)) return answers.workbook;
+    if(/free|resource|white paper|behavior bridge|70\/10|tool/.test(q)) return answers.free;
+    if(/quiz|pattern|health check|check/.test(q)) return answers.quiz;
+    if(/article|note|budget|spending|save|saving|back on track/.test(q)) return answers.articles;
+    if(/247|session|one problem|appointment|book/.test(q)) return answers.session;
+    if(/founding|four week|4 week|pilot|binder|playbook/.test(q)) return answers.founding;
+    if(/compare|which option|which service|help me choose/.test(q)) return answers.compare;
+    if(/pay|payment|afterpay|after pay/.test(q)) return answers.afterpay;
+    if(/human|person|support|contact|email/.test(q)) return answers.human;
+    return `I couldn’t match that to a page yet. Try “workbook,” “budget,” “quiz,” “session,” or “Founding Client.” Or <a href="${EMAIL}">contact the support team →</a>`;
+  }
+  if(searchForm){
+    searchForm.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const query=searchInput.value;
+      const user=document.createElement('div');
+      user.className='mbs-chat-message user';
+      user.textContent=query || 'Search';
+      const bot=document.createElement('div');
+      bot.className='mbs-chat-message bot';
+      bot.innerHTML=searchAnswer(query);
+      body.append(user,bot);
+      body.scrollTop=body.scrollHeight;
+      searchInput.value='';
+    });
+  }
 
   function openChat(){ panel.hidden = false; launcher.setAttribute('aria-expanded','true'); }
   function closeChat(){ panel.hidden = true; launcher.setAttribute('aria-expanded','false'); }
