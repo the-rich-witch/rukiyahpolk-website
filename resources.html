@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Free Help | Money Behavior Strategy™</title><meta content="Need help with your money but not ready to pay for help? Use these free tools to see what is happening with your money and decide what to do next." name="description"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><meta content="Free Help | Money Behavior Strategy™" property="og:title"/><meta content="assets/social-card.png" property="og:image"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/></head><body class="editorial-site">
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Free Help | Money Behavior Strategy™</title><meta content="Not sure why your money keeps running out? Use these free tools to see what is happening with your money and decide what to do next." name="description"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><meta content="Free Help | Money Behavior Strategy™" property="og:title"/><meta content="assets/social-card.png" property="og:image"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/></head><body class="editorial-site">
 <header class="site-header"><a class="brand" href="index.html"><strong>Money Behavior Strategy™</strong></a><button aria-expanded="false" class="menu">Menu</button><nav><a href="index.html">Home</a><a href="why-my-money-doesnt-last.html">Why My Money Doesn’t Last</a><a href="about.html">About</a><a href="resources.html">Free Help</a><a class="nav-button" href="work-with-me.html">Get Help</a></nav></header>
 <main>
 <section class="page-hero">
 <div class="container">
 <p class="eyebrow">Free Help</p>
-<h1>Need help with your money but not ready to pay for help?</h1>
-<p>Use these free tools to see where your money is going, why you keep running short, and what you can do with your next check.</p>
+<h1>Not sure why your money keeps running out?</h1>
+<p>Start here. These free tools can help you see what’s happening with your money and choose one thing to do differently with your next check.</p>
 </div>
 </section>
 <div class="ribbon">See What Is Happening <span>✦</span> Find Out Why <span>✦</span> Try One Change <span>✦</span> Plan Your Next Check</div>
@@ -66,8 +66,8 @@
 <section class="section daily-truth">
 <div class="container">
 <p class="eyebrow">Come back tomorrow.</p>
-<h2>A new Money Truth is waiting for you each day.</h2>
-<p>Tap the card for today's.</p>
+<h2>A new Today’s Money Tip is waiting for you each day.</h2>
+<p>Tap the card for today’s money tip.</p>
 <div aria-label="Tap to reveal today's money truth" class="truth-card" id="truthCard" role="button" tabindex="0">
 <div class="truth-inner">
 <div class="truth-front"><span>Tap to reveal</span></div>
@@ -100,7 +100,7 @@ function updateSim(){
 }
 if(simAmount){ simAmount.addEventListener('input', updateSim); updateSim(); }
 
-// Daily Money Truth — deterministic pick by day of year, changes daily
+// Daily Today’s Money Tip — deterministic pick by day of year, changes daily
 const moneyTruths = [
   "If the same money problem keeps coming back, you can learn what happens before it and what to do next.",
   "A budget is not a punishment. It is a plan that already knows what it is doing.",
@@ -130,7 +130,7 @@ const moneyTruths = [
   "A dollar with a job changes everything — not because it's magic, but because it's decided.",
   "You get to redefine what 'doing well with money' means for you.",
   "Consistency beats intensity. Every time.",
-  "The bridge between knowing and doing is built one small action at a time.",
+  "Getting paid isn’t the same as having money to spend. Before you buy something, look at what your money still needs to pay for.",
   "You are not starting over. You are starting from exactly where you actually are."
 ];
 const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0)) / 86400000);
