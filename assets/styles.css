@@ -463,3 +463,13 @@ footer{background:var(--sage-light)}
 .featured-workbook-copy h2{margin-bottom:10px}.featured-workbook-copy h3{font-family:var(--serif);font-size:clamp(1.45rem,3vw,2rem);margin:0 0 14px}.featured-workbook-copy>p:not(.eyebrow){color:var(--muted);max-width:650px}.featured-workbook-copy .workbook-meta{font-size:.92rem;font-weight:700;color:var(--emerald-deep);margin:18px 0 24px}
 .mbs-chat-search{display:flex;gap:8px;margin:12px 0 4px}.mbs-chat-search input{min-width:0;flex:1;border:1px solid rgba(23,79,60,.2);border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink);font:inherit}.mbs-chat-search input:focus{outline:2px solid rgba(23,79,60,.22);outline-offset:1px}.mbs-chat-search button{border:0;border-radius:12px;background:var(--emerald-deep);color:#fff;font-weight:700;padding:10px 12px;cursor:pointer}.mbs-chat-search-hint{font-size:.76rem;color:var(--muted);margin:5px 0 12px}
 @media(max-width:780px){.featured-workbook{grid-template-columns:1fr}.featured-workbook-image img{width:min(82%,330px)}.featured-workbook-copy{text-align:left}}
+
+/* 2026-08 content-clarity pass: keep decision and information cards straight and easy to scan. */
+.pattern-card:nth-child(n),
+.resource-card:nth-child(n),
+.path-card:nth-child(n),
+.credential:nth-child(n){transform:none;}
+.pattern-card:hover,
+.resource-card:hover,
+.path-card:hover,
+.credential:hover{transform:translateY(-4px);}

@@ -141,3 +141,10 @@ Deploy this build and make **one test Founding Client enrollment submission**. I
 - Featured **5 Steps to Winning Financially** on the Resources page with the actual workbook cover and Etsy CTA.
 - Upgraded the sitewide quick-answer chatbot into a lightweight **“What are you looking for?”** navigator with keyword routing for the workbook, free resources, quizzes, articles, services, and support.
 - No separate site search engine was added; the chatbot handles lightweight find/navigation instead.
+
+
+## Founding Client payment flow — current pilot process
+For the first 8 Founding Clients, account/package setup in Square is manual. The website flow is: Get Help → Founding Client enrollment form → Rukiyah personally sets up the client in Square → client receives $597 payment instructions → spot is saved after payment → four-session package is activated → welcome/Starting Point steps are sent. Do not replace this with an untested direct package checkout flow.
+
+## Homepage hero image — August 26, 2026
+The homepage hero now uses `assets/hero-family-transformation.webp`. The image is intentionally a candid, lived-in family scene showing the desired after experience: everyday life, connection, and calm around money. Rukiyah appears shortly below the hero as the human guide. Do not replace this with generic cash/calculator imagery without explicit approval.
