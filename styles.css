@@ -639,3 +639,27 @@ footer{background:var(--sage-light)}
  .route-quiz-actions{flex-direction:column}
  .route-quiz-actions .button{width:100%}
 }
+
+/* Sitewide readability pass — Aug 28, 2026 */
+body{font-size:17px;}
+.site-header nav>a:not(.nav-button),footer a{font-size:.92rem;}
+.eyebrow{font-size:.82rem;line-height:1.4;}
+.button,.nav-button{font-size:.9rem;letter-spacing:.04em;}
+.page-hero p,.about-hero-copy p{font-size:1.08rem;line-height:1.65;}
+.resource-card p,.faq-list details p,.route-chooser p,.article-next-step p,.about-next-step p{font-size:1rem;line-height:1.62;}
+.mbs-chat-panel{font-size:16px;}
+@media(max-width:580px){
+  body{font-size:16px;}
+  .eyebrow{font-size:.78rem;}
+  .page-hero p,.about-hero-copy p{font-size:1.03rem;}
+  .button,.nav-button{font-size:.94rem;}
+}
+
+/* Homepage hero headline color lock — Aug 28, 2026 */
+.homepage-hero h1{text-transform:uppercase;}
+.homepage-hero .hero-white{color:#fff;}
+.homepage-hero .hero-gold{color:var(--gold-bright);}
+
+/* Homepage featured-offer correction — remove discarded teaching image */
+.featured-offer .concept-bridge-grid{grid-template-columns:minmax(0,760px);justify-content:center;}
+.featured-offer .concept-bridge-copy{max-width:760px;}
