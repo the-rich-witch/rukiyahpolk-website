@@ -473,3 +473,169 @@ footer{background:var(--sage-light)}
 .resource-card:hover,
 .path-card:hover,
 .credential:hover{transform:translateY(-4px);}
+
+/* ===== FRAMEWORK CARD RESPONSIVE FIX — Aug 26, 2026 =====
+   Keep the step title and description from colliding on wider screens,
+   while preserving the stacked mobile layout. */
+.framework-steps li{
+  grid-template-columns:52px minmax(170px,220px) minmax(0,1fr);
+  column-gap:24px;
+  align-items:start;
+}
+.framework-steps strong,
+.framework-steps p{
+  min-width:0;
+}
+@media(max-width:760px){
+  .framework-steps li{
+    grid-template-columns:38px minmax(0,1fr);
+    column-gap:14px;
+  }
+  .framework-steps li strong,
+  .framework-steps li p{
+    grid-column:2;
+  }
+}
+
+/* PASS 2 ROUTING */
+.route-chooser,.article-next-step,.about-next-step{margin:2rem auto;padding:1.5rem;border:1px solid rgba(70,80,65,.18);border-radius:18px;}
+.route-chooser p,.article-next-step p,.about-next-step p{margin:.65rem 0;}
+
+/* ===== PASS 3: RESPONSIVE VISUAL QA — Aug 27, 2026 ===== */
+/* Keep the four MBS framework cards readable at every desktop width. */
+.framework-steps li{
+  grid-template-columns:52px minmax(0,1fr);
+  column-gap:18px;
+  row-gap:5px;
+  align-items:start;
+}
+.framework-steps li > span{grid-column:1;grid-row:1 / span 2;}
+.framework-steps li > strong{grid-column:2;grid-row:1;min-width:0;overflow-wrap:anywhere;}
+.framework-steps li > p{grid-column:2;grid-row:2;min-width:0;overflow-wrap:anywhere;}
+
+/* New Pass 2 routing blocks should sit inside the page rhythm, not edge-to-edge. */
+.route-chooser{
+  width:min(1180px,90vw);
+  max-width:900px;
+}
+.article-next-step,.about-next-step{
+  width:min(900px,90vw);
+}
+.route-chooser,.article-next-step,.about-next-step{
+  overflow-wrap:anywhere;
+}
+
+/* Prevent wide comparison content from forcing the whole page sideways. */
+.comparison-wrap{max-width:100%;-webkit-overflow-scrolling:touch;}
+
+/* Tablet: the hero photo should support the copy without becoming a second full screen. */
+@media(max-width:980px){
+  .hero-visual{min-height:clamp(380px,62vw,620px);}
+  .hero-visual>img{position:absolute;inset:0;}
+  .route-chooser,.article-next-step,.about-next-step{padding:1.3rem;}
+}
+
+/* Phone: tighten large visual blocks and make taps/buttons comfortable. */
+@media(max-width:580px){
+  .hero-copy{padding:58px 7vw 54px;}
+  .hero-visual{min-height:330px;}
+  .hero h1{font-size:clamp(2.55rem,13vw,3.45rem);}
+  .hero-lede{font-size:1.18rem;}
+  .actions{gap:14px;margin-top:24px;}
+  .actions .button{width:100%;text-align:center;}
+  .big-idea .container{padding:38px 7vw;border-radius:22px;}
+  .plain-list{padding:10px 20px;box-shadow:10px 10px 0 rgba(23,79,60,.08);}
+  .route-chooser,.article-next-step,.about-next-step{
+    width:90vw;
+    padding:1.1rem;
+    border-radius:15px;
+  }
+  .framework-steps li{
+    grid-template-columns:34px minmax(0,1fr);
+    column-gap:12px;
+    padding:18px 16px;
+  }
+  .framework-steps li > span{grid-column:1;grid-row:1 / span 2;}
+  .framework-steps li > strong{grid-column:2;grid-row:1;}
+  .framework-steps li > p{grid-column:2;grid-row:2;}
+  .featured-workbook-image img{margin-inline:auto;}
+  .mbs-chat-panel{max-height:68vh;}
+}
+
+/* Homepage hero readability pass — Aug 27, 2026 */
+.hero.hero-split .eyebrow{font-size:.94rem;line-height:1.35;letter-spacing:.13em;}
+.hero.hero-split .hero-intro,.hero.hero-split .hero-support{font-size:1.125rem;line-height:1.6;max-width:660px;color:rgba(255,255,255,.88);}
+.hero.hero-split .hero-intro{margin-bottom:12px;}
+.hero.hero-split .hero-lede{font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.45;margin-bottom:16px;}
+.hero.hero-split .actions .button{font-size:1rem;line-height:1.3;letter-spacing:.035em;min-height:54px;padding:15px 22px;}
+@media(max-width:580px){
+  .hero.hero-split .eyebrow{font-size:.88rem;}
+  .hero.hero-split .hero-intro,.hero.hero-split .hero-support{font-size:1.0625rem;line-height:1.58;}
+  .hero.hero-split .hero-lede{font-size:1.2rem;}
+  .hero.hero-split .actions .button{font-size:1rem;}
+}
+
+/* Homepage StoryBrand-inspired clarity pass — Aug 28, 2026 */
+.homepage-hero h1{font-size:clamp(3rem,5.7vw,6rem);line-height:1.02;max-width:780px}
+.homepage-hero .hero-accent{color:var(--gold-bright)}
+.homepage-hero .hero-guide{font-size:1rem!important;color:rgba(255,255,255,.72)!important;margin-top:4px}
+.homepage-hero .hero-visual img{object-fit:cover;object-position:center}
+.primary-story-cta{background:var(--gold-bright)!important;border-color:var(--gold-bright)!important;color:var(--ink)!important}
+.primary-story-cta:hover{background:#e1bb77!important;border-color:#e1bb77!important;color:var(--ink)!important}
+.hero-route-card{margin-top:30px;max-width:560px;padding:24px;border:1px solid rgba(255,255,255,.22);border-radius:20px;background:rgba(255,255,255,.065);backdrop-filter:blur(8px)}
+.hero-route-card strong{display:block;font-size:1rem;line-height:1.45;margin-bottom:15px;color:#fff}
+.hero-route-card .button{font-size:.92rem;letter-spacing:.035em;text-transform:none;min-height:48px}
+.homepage-empathy .problem-grid{align-items:start}
+.homepage-empathy .section-heading{margin-bottom:0;position:sticky;top:118px}
+.empathy-list .plain-item{grid-template-columns:38px 1fr;padding:24px 0}
+.empathy-list .plain-item>span{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:.85rem;letter-spacing:0;margin-top:3px}
+.empathy-list .plain-item p{font-size:1.12rem;line-height:1.55;color:var(--ink)}
+.empathy-close{max-width:900px;text-align:center;margin-top:52px}
+.empathy-close p{font-family:var(--serif);font-size:clamp(1.55rem,2.7vw,2.45rem);line-height:1.25;margin-bottom:28px}
+.featured-offer .eyebrow{font-size:.82rem}
+.featured-offer .button{margin-top:8px}
+.homepage-authority .homepage-proof{grid-template-columns:repeat(3,minmax(0,1fr))}
+.homepage-authority .homepage-proof strong{font-size:1.15rem}
+.homepage-authority .homepage-proof span{display:block;line-height:1.45;margin-top:5px}
+.authority-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.offer-choice-grid{align-items:stretch}
+.offer-choice-card{display:flex;flex-direction:column;min-height:100%}
+.offer-choice-card .offer-label{margin:12px 0 10px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald)}
+.offer-choice-card h3{margin-bottom:14px}
+.offer-choice-card>p:not(.offer-label):not(.detail){color:var(--muted)}
+.offer-card-bottom{margin-top:auto;padding-top:24px}
+.offer-card-bottom .detail{font-family:var(--serif);font-size:2rem;color:var(--ink);margin-bottom:16px}
+.offer-card-bottom .button{width:100%;text-align:center;font-size:.86rem;letter-spacing:.035em;text-transform:none;padding-inline:16px}
+.homepage-path .section-heading p:not(.eyebrow){font-size:1.12rem;max-width:760px}
+
+/* Starting-point routing quiz */
+.starting-point-shell{background:linear-gradient(180deg,#fffdf8,#f1e8da);min-height:calc(100vh - 84px);padding:72px 0 110px}
+.starting-point-card{width:min(820px,90vw);margin:0 auto;background:var(--paper);border:1px solid rgba(183,134,61,.18);border-radius:28px;padding:clamp(28px,5vw,58px);box-shadow:var(--warm-shadow)}
+.starting-point-card h1{font-size:clamp(2.5rem,6vw,4.8rem)}
+.starting-point-card .quiz-intro{font-size:1.12rem;color:var(--muted);max-width:680px}
+.route-question{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
+.route-question h2{font-size:clamp(1.55rem,3vw,2.25rem);margin-bottom:18px}
+.route-options{display:grid;gap:12px}
+.route-option{display:block;width:100%;text-align:left;border:1px solid rgba(23,79,60,.2);background:#fff;color:var(--ink);padding:16px 18px;border-radius:14px;cursor:pointer;font-weight:600;line-height:1.4}
+.route-option:hover,.route-option.selected{border-color:var(--emerald);background:#edf3ef}
+.route-quiz-actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.route-result{display:none;margin-top:34px;padding:28px;border-radius:20px;background:var(--emerald-deep);color:#fff}
+.route-result.active{display:block}
+.route-result .eyebrow{color:var(--gold-bright)}
+.route-result h2{color:#fff;font-size:clamp(1.8rem,4vw,3rem)}
+.route-result p{color:rgba(255,255,255,.82)}
+.route-result .button{margin-top:8px}
+@media(max-width:980px){.homepage-empathy .section-heading{position:static}.homepage-authority .homepage-proof{grid-template-columns:1fr}}
+@media(max-width:580px){
+ .homepage-hero h1{font-size:clamp(2.7rem,12.5vw,3.7rem)}
+ .hero-route-card{padding:18px}
+ .homepage-empathy .problem-grid{gap:36px}
+ .empathy-list .plain-item p{font-size:1.05rem}
+ .authority-actions{align-items:stretch;flex-direction:column}
+ .authority-actions .button{width:100%;text-align:center}
+ .offer-card-bottom .button{font-size:.9rem}
+ .starting-point-shell{padding:42px 0 80px}
+ .starting-point-card{border-radius:20px;padding:26px 20px}
+ .route-quiz-actions{flex-direction:column}
+ .route-quiz-actions .button{width:100%}
+}
