@@ -824,3 +824,41 @@ body{font-size:1rem;line-height:1.72;}
 .mbs-chat-options button{padding:13px 14px;min-height:52px;}
 .mbs-chat-search-hint{font-size:.9rem;}
 @media(max-width:700px){.mbs-chat-panel{font-size:18px;}.mbs-chat-message,.mbs-chat-options button,.mbs-chat-foot a{font-size:1rem;}}
+
+
+/* PASS 13 — rendered homepage corrections from device review */
+/* Headline order: gold / black / gold / black on the light hero. */
+.homepage-hero .hero-gold{color:var(--gold)!important;}
+.homepage-hero .hero-white{color:var(--ink)!important;}
+
+/* Keep the routing prompt readable on the light card. */
+.homepage-hero .hero-route-card strong{
+  color:var(--ink)!important;
+  font-size:1.05rem;
+}
+
+/* Keep the primary hero action gold with white lettering. */
+.homepage-hero .hero-primary-cta,
+.homepage-hero .hero-primary-cta:visited{
+  background:var(--gold)!important;
+  border-color:var(--gold)!important;
+  color:#fff!important;
+}
+
+/* Let offer cards size to their own content instead of stretching shorter cards. */
+.offer-choice-grid{align-items:start;}
+.offer-choice-card{
+  min-height:0!important;
+  height:auto;
+}
+.offer-card-bottom{
+  margin-top:24px!important;
+  padding-top:0;
+}
+
+/* Preserve comfortable reading sizes without letting the mobile display headline dominate the screen. */
+@media(max-width:580px){
+  .homepage-hero h1{font-size:clamp(2.35rem,10.5vw,3.35rem);line-height:.98;}
+  .homepage-hero.hero.hero-split .hero-copy{padding-top:44px;}
+  .homepage-hero .hero-route-card strong{font-size:1rem;}
+}

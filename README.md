@@ -23,3 +23,12 @@ The enrollment form uses Formspree endpoint https://formspree.io/f/mwlegoyg. The
 
 ## Session language
 Intake outcome question: “At the end of our session, what would you like to leave knowing, understanding, or ready to do?” The facilitator should revisit the desired outcome before MAKE A PLAN, ask what remains unclear or unresolved, and use that information to clarify or adjust the Money Action Plan™ without presenting the session as a guaranteed outcome.
+
+
+PASS 13 — Device-render corrections
+- Hero headline color order changed to gold / black / gold / black.
+- Find My Starting Point prompt changed from white to dark text on the light card.
+- Kept Make My Money Plan gold with white lettering.
+- Fixed the money-plan comma so it stays with “money plan,” when text wraps.
+- Removed forced equal-height spacing from the 3 offer cards.
+- Reduced only the mobile hero display headline while preserving larger body text.
