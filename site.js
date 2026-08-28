@@ -1,14 +1,14 @@
 /* Live booking URLs. HTML also contains the Square URL as a no-JavaScript fallback. */
 const SESSION_URL = 'https://book.squareup.com/appointments/quqavoq6ke15pq/location/LB268NWTFYPY7/services/C2CN5B4JAG7CDQW4VJFT6VXZ'; // Money Behavior Strategy™ Session Square booking
-const FOUNDING_URL = 'founding-client-enrollment.html'; // Founding Client pilot enrollment form
+const EXPERIENCE_URL = 'founding-client-enrollment.html'; // Money Behavior Strategy™ 4-Week Experience enrollment form
 
 // Only replace an existing page anchor when a real external URL has been added.
 // Until then, buttons fall back to scrolling to the #work-with-me section on the page.
 if (SESSION_URL && SESSION_URL !== '#') {
   document.querySelectorAll('.session-booking-link').forEach((link) => { link.href = SESSION_URL; });
 }
-if (FOUNDING_URL && FOUNDING_URL !== '#') {
-  document.querySelectorAll('.founding-interest-link').forEach((link) => { link.href = FOUNDING_URL; });
+if (EXPERIENCE_URL && EXPERIENCE_URL !== '#') {
+  document.querySelectorAll('.founding-interest-link').forEach((link) => { link.href = EXPERIENCE_URL; });
 }
 
 const menu = document.querySelector('.menu');
@@ -36,7 +36,7 @@ if (menu && nav) {
         <button class="mbs-chat-close" type="button" aria-label="Close quick answers">×</button>
       </div>
       <div class="mbs-chat-body" aria-live="polite">
-        <div class="mbs-chat-message bot">Tell me what you’re looking for. I can help you find resources, the workbook, quizzes, articles, services, booking information, and common answers. I’m an automated site tool, not Rukiyah or a human, and I don’t give personal money advice.</div>
+        <div class="mbs-chat-message bot"><strong>What can I help you find?</strong> Choose a question below or type what you’re looking for. I can explain the two ways to work with Rukiyah, help you choose where to start, or point you to free resources. I’m an automated site tool, not Rukiyah or a human, and I don’t give personal money advice.</div>
         <form class="mbs-chat-search" role="search">
           <input type="search" aria-label="What are you looking for?" placeholder="Try: workbook, budget, quiz…">
           <button type="submit">Find</button>
@@ -50,14 +50,15 @@ if (menu && nav) {
         </div>
         <div class="mbs-chat-options mbs-chat-intent-options">
           <button type="button" data-chat="ready-session">I’m ready for the $247 session</button>
-          <button type="button" data-chat="ready-founding">I’m ready for the Founding Client Pilot</button>
+          <button type="button" data-chat="ready-experience">I’m ready for the Money Behavior Strategy™ 4-Week Experience</button>
         </div>
         <div class="mbs-chat-options">
-          <button type="button" data-chat="compare">Which option fits me?</button>
+          <button type="button" data-chat="starting-point">I’m not sure which help fits</button>
+          <button type="button" data-chat="compare">Compare the paid options</button>
           <button type="button" data-chat="session">What happens in the $247 session?</button>
-          <button type="button" data-chat="value">What exactly am I paying $247 for?</button>
-          <button type="button" data-chat="founding">What is the Founding Client Pilot?</button>
-          <button type="button" data-chat="pilot">When does the pilot start?</button>
+          <button type="button" data-chat="value">What do I leave the $247 session with?</button>
+          <button type="button" data-chat="experience">What is the Money Behavior Strategy™ 4-Week Experience?</button>
+          <button type="button" data-chat="experience-start">When does the 4-Week Experience begin?</button>
           <button type="button" data-chat="ready">Do I need to have my money together first?</button>
           <button type="button" data-chat="control">Will Rukiyah tell me what I can and can't buy?</button>
           <button type="button" data-chat="avoid">What if I keep avoiding looking at my money?</button>
@@ -79,23 +80,24 @@ if (menu && nav) {
 
   const answers = {
     workbook: `You can find <strong>5 Steps to Winning Financially</strong> on the Resources page. It’s a self-guided illustrated digital workbook. <a href="resources.html#workbook">See the workbook →</a>`,
-    free: `Start on the Resources page for the Money Pattern Quiz, Money Health Check, Behavior Bridge™ white paper, 70/10/10/10 tool, and Money Behavior Notes. <a href="resources.html">See free resources →</a>`,
-    quiz: `If you want to understand a repeating money pattern, try the <a href="money-pattern-quiz.html">Money Pattern Quiz →</a>. If you want a quick check-in on where your money habits stand, try the <a href="money-health-check.html">Money Health Check →</a>`,
+    free: `Start on the Free Help page for the Money Check, Money Health Check, Behavior Bridge™ white paper, 70/10/10/10 tool, and Money Behavior Notes. <a href="resources.html">See free resources →</a>`,
+    quiz: `If you want help seeing what keeps happening with your money, try the <a href="money-pattern-quiz.html">Money Check →</a>. If you want a quick check-in on where your money habits stand, try the <a href="money-health-check.html">Money Health Check →</a>. If you are trying to decide which service or free route fits, use <a href="find-my-starting-point.html">Find My Starting Point →</a>`,
     articles: `Money Behavior Notes has short, plain-language articles about spending, budgets, and getting back on track. <a href="notes.html">Read Money Behavior Notes →</a>`,
     'ready-session': `<strong>You can book now.</strong> The Money Behavior Strategy™ Session is $247 for one focused 60-minute session. Payment is required when you book. <a href="${SESSION_URL}">Choose your time and book the $247 session →</a>`,
-    'ready-founding': `<strong>You’re ready to become a Founding Client.</strong> The Founding Client Experience is $597 and limited to 8 Founding Clients. Start with the short enrollment form. Rukiyah personally sets up each Founding Client account, then you’ll receive payment instructions and next steps. <a href="${FOUNDING_URL}">Start my enrollment →</a>`,
-    compare: `If you have <strong>one specific money problem you want help with now</strong>, the $247 Money Behavior Strategy™ Session is the problem-focused option: one 60-minute session. If you are dealing with <strong>deeper or repeating money patterns</strong>, the $597 Founding Client Pilot is the pattern-focused option: four weeks, four 60-minute sessions, a Mini Money Binder, and My Money Playbook™. This pilot is limited to 8 clients and officially launches September 22, 2026. Each Founding Client completes four private one-on-one sessions on their own schedule. <a href="${workLink}#compare">Compare both options →</a>`,
+    'ready-experience': `<strong>Introductory enrollment is open.</strong> Only 8 spots are available at $597 for the Money Behavior Strategy™ 4-Week Experience. Enrollment closes September 20 or when all 8 spots are filled. Start with the short enrollment form. After it is reviewed, Rukiyah will set up your client account and send your payment instructions and next steps. Your spot is saved after payment. <a href="${EXPERIENCE_URL}">Start my enrollment →</a>`,
+    'starting-point': `If you are not sure which kind of help fits, use <strong>Find My Starting Point</strong>. Three short questions will point you toward the 1:1 session, the Money Behavior Strategy™ 4-Week Experience, or free help. <a href="find-my-starting-point.html">Find My Starting Point →</a>`,
+    compare: `Have <strong>one focused money problem</strong> you want help working through? Start with the $247 Money Behavior Strategy™ Session. If <strong>the problem keeps coming back</strong> and you want time to practice a different way of handling it, the Money Behavior Strategy™ 4-Week Experience includes four private 60-minute sessions, a Mini Money Binder, and My Money Playbook™. Introductory enrollment is limited to 8 spots at $597. <a href="${workLink}#compare">Compare both options →</a>`,
     session: `The $247 Money Behavior Strategy™ Session is one focused 60-minute private session. Bring one money problem. You and Rukiyah look at what happened, ask why it made sense at the time, decide what to try differently, and build a Money Action Plan™ for what happens next. <a href="${SESSION_URL}">Book the session →</a>`,
-    value: `You’re paying for a focused 60-minute working session with Rukiyah. You bring one real money problem, work through it using SEE → ASK WHY → TRY → MAKE A PLAN, and leave with a Money Action Plan™ you can use after the call. <a href="${SESSION_URL}">See available times →</a>`,
-    founding: `The Founding Client Pilot is a $597 four-week private, one-on-one guided experience for deeper or repeating money patterns. It’s limited to 8 Founding Clients and officially launches September 22, 2026, on the autumn equinox. This is not group coaching or a cohort. Each client completes four private 60-minute Founding Client Weekly Sessions on their own schedule and receives a Mini Money Binder. You move through SEE → ASK WHY → TRY → MAKE A PLAN and build My Money Playbook™ as you go. <a href="${workLink}#founding">See the pilot →</a>`,
-    pilot: `The Autumn Equinox Founding Client Pilot officially launches September 22, 2026. Enrollment closes September 20 or when all 8 Founding Client spots are filled. Each Founding Client begins their own four-week experience with their first private session and follows their individual schedule; the Square package remains valid for two months only to allow room for scheduling or rescheduling. <a href="${workLink}#founding">See the pilot details →</a>`,
+    value: `You bring <strong>one focused money problem</strong>. During the 60-minute private session, you and Rukiyah use SEE → ASK WHY → TRY → MAKE A PLAN to work through what is happening. You leave with a Money Action Plan™ for what to do next. <a href="${SESSION_URL}">See available times →</a>`,
+    experience: `The Money Behavior Strategy™ 4-Week Experience is private 1:1 help for a money problem that keeps coming back. You complete four 60-minute weekly sessions, move through SEE → ASK WHY → TRY → MAKE A PLAN, use your Mini Money Binder, and build My Money Playbook™ as you go. <strong>Introductory enrollment is limited to 8 spots at $597.</strong> Enrollment closes September 20 or when all 8 spots are filled. <a href="${workLink}#founding">See the 4-Week Experience →</a>`,
+    'experience-start': `The Money Behavior Strategy™ 4-Week Experience opens September 22, 2026. <strong>Introductory enrollment closes September 20 or when all 8 spots at $597 are filled.</strong> Your four private sessions are scheduled individually, and the four-session package is valid for two months to allow room for scheduling or rescheduling. <a href="${workLink}#founding">See the 4-Week Experience details →</a>`,
     ready: `No. You don’t need a perfect budget, a cleaned-up bank account, or everything figured out first. Bring what’s actually happening. That’s what you and Rukiyah work with. <a href="${workLink}#compare">See which option fits →</a>`,
     control: `No. Rukiyah isn’t there to police your spending or hand you a list of things you’re allowed to buy. The work is about seeing what’s happening, understanding your choices, and building a plan you can actually use in your real life.`,
     avoid: `If you open the app, see the number, want to close it again, or keep telling yourself you’ll deal with it later, you don’t have to clean that up before getting help. That’s useful information about what’s happening right now. <a href="money-health-check.html">Start with the Money Health Check →</a>`,
-    afterpay: `After you pay for the $247 session, Square sends your booking confirmation and appointment details. After Founding Client enrollment, Rukiyah will personally set up your Founding Client package and send your payment and next-step instructions. Once your package is active, you’ll receive instructions for scheduling your four weekly sessions.`,
-    weekly: `The Founding Client Pilot includes four 60-minute weekly sessions. After your enrollment and payment are complete, Rukiyah will activate your four-session Founding Client package and send you instructions for scheduling your sessions. The package is set to expire after two months so there is room for scheduling and rescheduling.`,
-    binder: `The Mini Money Binder is included with the four-week Founding Client Pilot. You use it for observations, practice pages, 70/10/10/10 work, and My Money Playbook™. It’s a working tool you use throughout the experience.`,
-    before: `Yes. If you understand the $247 session and are ready, you can book it without an extra call. If you are ready for the Founding Client Experience, <a href="${FOUNDING_URL}">start the short enrollment form →</a>. For any other question first, <a href="${EMAIL}">contact the support team →</a>`,
+    afterpay: `For the $247 session, payment is made when you book and Square sends your confirmation and appointment details. For the 4-Week Experience, you first submit the enrollment form. After it is reviewed, Rukiyah sets up your client account and sends payment instructions. Your spot is saved after payment. Once your package is active, you’ll receive instructions for scheduling your four weekly sessions.`,
+    weekly: `The Money Behavior Strategy™ 4-Week Experience includes four 60-minute weekly sessions. After your enrollment and payment are complete, Rukiyah will activate your four-session package and send you instructions for scheduling your sessions. The package is set to expire after two months so there is room for scheduling and rescheduling.`,
+    binder: `The Mini Money Binder is included with the Money Behavior Strategy™ 4-Week Experience. You use it for observations, practice pages, 70/10/10/10 work, and My Money Playbook™. It’s a working tool you use throughout the experience.`,
+    before: `Yes. You do not need an intro call before booking. If the $247 session fits, you can book it directly. If you want the Money Behavior Strategy™ 4-Week Experience, <a href="${EXPERIENCE_URL}">start the short enrollment form →</a>. If you still have a question, <a href="${EMAIL}">contact the support team →</a>`,
     human: `Need more help? Contact the Money Behavior Strategy support team. This quick-answer tool is automated, so a real person will pick up from here. <a href="${EMAIL}">Contact the support team →</a>`
   };
 
@@ -110,11 +112,12 @@ if (menu && nav) {
     if(/quiz|pattern|health check|check/.test(q)) return answers.quiz;
     if(/article|note|budget|spending|save|saving|back on track/.test(q)) return answers.articles;
     if(/247|session|one problem|appointment|book/.test(q)) return answers.session;
-    if(/founding|four week|4 week|pilot|binder|playbook/.test(q)) return answers.founding;
-    if(/compare|which option|which service|help me choose/.test(q)) return answers.compare;
+    if(/four week|4 week|binder|playbook/.test(q)) return answers.experience;
+    if(/starting point|where to start|which help|help me choose/.test(q)) return answers['starting-point'];
+    if(/compare|which option|which service/.test(q)) return answers.compare;
     if(/pay|payment|afterpay|after pay/.test(q)) return answers.afterpay;
     if(/human|person|support|contact|email/.test(q)) return answers.human;
-    return `I couldn’t match that to a page yet. Try “workbook,” “budget,” “quiz,” “session,” or “Founding Client.” Or <a href="${EMAIL}">contact the support team →</a>`;
+    return `I couldn’t match that to a page yet. Try “starting point,” “workbook,” “budget,” “quiz,” “session,” or “4-Week Experience.” Or <a href="${EMAIL}">contact the support team →</a>`;
   }
   if(searchForm){
     searchForm.addEventListener('submit',(e)=>{
