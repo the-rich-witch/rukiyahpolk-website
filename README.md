@@ -32,3 +32,6 @@ PASS 13 — Device-render corrections
 - Fixed the money-plan comma so it stays with “money plan,” when text wraps.
 - Removed forced equal-height spacing from the 3 offer cards.
 - Reduced only the mobile hero display headline while preserving larger body text.
+
+
+PASS 15: Added a dedicated StoryBrand success/destination section before the final CTA and simplified the final CTA so it no longer duplicates the success section.
