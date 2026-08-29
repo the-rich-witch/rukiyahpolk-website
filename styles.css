@@ -496,3 +496,36 @@ footer{background:var(--sage-light)}
     grid-column:2;
   }
 }
+
+
+/* ===== PASS 23 — MOBILE CONTRAST + HERO RHYTHM ===== */
+/* Restore the intended alternating headline colors on the dark homepage hero. */
+.homepage-hero .hero-gold{color:var(--gold-bright)!important;}
+.homepage-hero .hero-white{color:#fff!important;}
+
+/* Keep all supporting hero copy readable against the dark background. */
+.homepage-hero .hero-intro,
+.homepage-hero .hero-intro strong,
+.homepage-hero .hero-support,
+.homepage-hero .hero-outcome,
+.homepage-hero .hero-outcome strong,
+.homepage-hero .hero-guide{color:rgba(255,255,255,.88)!important;}
+.homepage-hero .hero-intro,
+.homepage-hero .hero-intro strong{color:#fff!important;}
+
+/* Give the two hero choices enough separation to read as separate decisions. */
+.homepage-hero .actions{margin-top:30px;margin-bottom:30px;}
+.homepage-hero .hero-route-card{margin-top:0;padding:22px 0 4px;display:grid;gap:16px;max-width:660px;}
+.homepage-hero .hero-route-card>strong{display:block;color:#fff;line-height:1.4;}
+.homepage-hero .hero-route-card .button{justify-self:start;}
+
+/* About-page credentials sit on a dark framework background: force accessible contrast. */
+.framework .credentials-grid .credential p,
+.credentials-grid .credential p{color:rgba(255,255,255,.92)!important;opacity:1!important;}
+.framework .credentials-grid .credential strong{color:#fff!important;}
+
+@media(max-width:580px){
+  .homepage-hero .actions{margin-top:28px;margin-bottom:34px;}
+  .homepage-hero .hero-route-card{padding-top:4px;gap:18px;}
+  .homepage-hero .hero-route-card .button{width:100%;max-width:100%;text-align:center;}
+}
