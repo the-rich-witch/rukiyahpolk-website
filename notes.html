@@ -10,11 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
 <header class="site-header">
-  <a class="wordmark" href="index.html">Rukiyah Polk</a>
+  <a class="wordmark" href="index.html" aria-label="Rukiyah Polk"><span aria-hidden="true">♡♡𝑅𝓊𝓀𝒾𝓎𝒶𝒽♡♡</span></a>
   <button class="menu-toggle" aria-label="Menu">&#9776;</button>
   <nav>
     <a href="index.html">Home</a>
@@ -30,8 +31,8 @@
   <section class="section" style="padding-bottom:20px">
     <div class="wrap narrow-wide">
       <p class="kicker">Notes From Rukiyah</p>
-      <h1>Ideas that would otherwise disappear into a feed.</h1>
-      <p class="lede muted">Money and money behavior. Human behavior. Relationships. Community. Parenting. Spirituality. Magick. Whatever's actually on my mind, written down somewhere it can stay.</p>
+      <h1>Where I think out loud.</h1>
+      <p class="lede muted">Money and money behavior. Human behavior. Relationships. Community. Parenting. Spirituality. Magick. Whatever's actually on my mind, written down somewhere it can stay. I don't always have an answer. Sometimes I think we need a better question.</p>
     </div>
   </section>
 
@@ -69,9 +70,31 @@
     </div>
   </section>
 
+  <section class="section rule-top">
+    <div class="wrap interactive-wrap">
+      <div class="interactive-intro">
+        <p class="kicker">Give me a better question</p>
+        <h2>Pick what's on your mind.</h2>
+        <p class="muted">No quiz result. No label. Just one question that may help you look at it differently.</p>
+      </div>
+      <div class="mini-tool" id="questionGenerator">
+        <p class="tool-label">Choose a subject:</p>
+        <div class="choice-row" id="questionTopics">
+          <button type="button" data-qtopic="money">Money</button>
+          <button type="button" data-qtopic="love">Love</button>
+          <button type="button" data-qtopic="work">Work</button>
+          <button type="button" data-qtopic="family">Family</button>
+          <button type="button" data-qtopic="me">Me</button>
+        </div>
+        <div class="generator-result" id="generatorResult" aria-live="polite">Pick a subject and I'll give you a question.</div>
+        <button type="button" class="tool-next" id="anotherQuestion" disabled>Give me another question</button>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer"><a class="footer-21-days" href="21-days.html">21 Days of Paying Attention</a>
   <a href="mailto:rukiyah@rukiyahpolk.com">rukiyah@rukiyahpolk.com</a>
   <span>&copy; 2026 Rukiyah Polk</span>
 </footer>
@@ -80,7 +103,18 @@
 document.querySelector('.menu-toggle').addEventListener('click', function(){
   document.querySelector('.site-header nav').classList.toggle('open');
 });
+const questionBank={
+ money:["You knew what you planned to do with the money. What happened between the plan and the purchase?","When are you already good at protecting your money? What's different then?","What are you doing with money that you've been calling 'bad with money'?"],
+ love:["Are you trying to make this relationship hurt less—or find out how good it can actually be?","When are the two of you already happiest together? What's different then?","Are you calling this peace because it feels peaceful—or because nobody is talking about the problem?"],
+ work:["What part of this is actually not working—and what part just didn't happen the way you expected?","When does this work feel easier? What's different on those days?","What are you trying to solve that may not be the real problem?"],
+ family:["What keeps happening in this family that everyone has learned to call normal?","Does this happen with everyone in the family—or only in certain situations?","What would change if understanding the behavior did not require approving it?"],
+ me:["Is this something you always do—or something you've done enough times that you've started calling it who you are?","When are you already the version of yourself you're trying to become?","What do you know about yourself because of evidence—and what have you repeated so often it started sounding like evidence?"]
+};
+let activeTopic='',lastIndex=-1;const result=document.getElementById('generatorResult'),again=document.getElementById('anotherQuestion');
+function showQuestion(){const arr=questionBank[activeTopic];if(!arr)return;let i=Math.floor(Math.random()*arr.length);if(arr.length>1&&i===lastIndex)i=(i+1)%arr.length;lastIndex=i;result.textContent=arr[i];again.disabled=false;}
+document.querySelectorAll('[data-qtopic]').forEach(b=>b.addEventListener('click',()=>{activeTopic=b.dataset.qtopic;lastIndex=-1;showQuestion();}));again.addEventListener('click',showQuestion);
 </script>
 
+<script src="chatbot.js" defer></script>
 </body>
 </html>

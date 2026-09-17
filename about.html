@@ -10,11 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
 <header class="site-header">
-  <a class="wordmark" href="index.html">Rukiyah Polk</a>
+  <a class="wordmark" href="index.html" aria-label="Rukiyah Polk"><span aria-hidden="true">♡♡𝑅𝓊𝓀𝒾𝓎𝒶𝒽♡♡</span></a>
   <button class="menu-toggle" aria-label="Menu">&#9776;</button>
   <nav>
     <a href="index.html">Home</a>
@@ -31,7 +32,7 @@
     <div>
       <p class="kicker">About</p>
       <h1>I've never been able to pick just one thing.</h1>
-      <p class="lede muted">And after years of trying to make that a problem to solve, I stopped. This is the long version of how a Money Behavior Strategist, a nonprofit founder, and a rootworker turned out to be the same person.</p>
+      <p class="lede muted">They make considerably more sense when you know what I've been paying attention to. This is the long version of how a Money Behavior Strategist, a nonprofit founder, and a rootworker turned out to be the same person.</p>
     </div>
     <div class="about-hero-photo">
       <img src="assets/about-portrait.jpg" alt="Portrait of Rukiyah Polk">
@@ -40,9 +41,12 @@
 
   <section class="about-section">
     <div class="wrap narrow-wide">
-      <h2>The founder story</h2>
-      <p class="muted">I've been teaching the money method that became 70/10/10/10 since 2009, back when it was just how I rebuilt my own finances after mine fell apart. There was no framework yet — just a stubborn habit of asking "okay, but what actually happened here," instead of accepting the version of events that made everyone feel better.</p>
-      <p class="muted">That question turned out to be useful for a lot more than money. It's the same question underneath Now Alternative Soulutions, and it's the same question I bring to a cartomancy reading. I'm not interested in the story that's supposed to be true. I'm interested in the one that is.</p>
+      <p class="kicker">The thread underneath it</p>
+      <h2>I kept seeing the same kind of gap.</h2>
+      <p class="muted">I saw children who had been taught what to do with hygiene and menstrual care — and still didn't always do it. I saw credit clients who knew the textbook advice, repaired their credit, and later found themselves back in debt. I saw people know exactly what they intended to do with money before it arrived and then do something different once it was there.</p>
+      <p class="muted">And I couldn't pretend I was standing outside of it. I've had money set aside for one thing and chosen to use it for something else because somebody asked, something came up, or I wanted something badly enough in the moment.</p>
+      <p class="muted">That made me suspicious of the idea that information alone changes behavior. If someone already knows better, knowing isn't necessarily the missing piece. <strong>So what is?</strong></p>
+      <p class="scribble">That's the question I kept following.</p>
     </div>
   </section>
 
@@ -72,15 +76,18 @@
 
   <section class="about-section">
     <div class="wrap narrow-wide">
-      <h2>Philosophy</h2>
-      <p class="muted">Every part of what I do rests on the same premise: people aren't broken, and their circumstances usually make more sense than they've been told. Shame doesn't change behavior — clarity does. So whether we're looking at a bank statement or a spread of cards, the job is the same: see what's actually there, understand why it's there, and figure out what to do next.</p>
+      <p class="kicker">How I tend to look at things</p>
+      <h2>Get specific before you settle for the story.</h2>
+      <p class="muted">I'm less interested in deciding what's wrong with somebody than understanding what's actually happening. A behavior can make sense without being helpful. Understanding a decision doesn't require approving it. Knowing better doesn't guarantee doing better. And calling somebody lazy, irresponsible, difficult, undisciplined, or broken usually tells me less than asking what happened.</p>
+      <p class="muted">So I pay attention. When does it happen? When doesn't it? How do you know? What changed? What's missing from the explanation? What already works? What would a useful next move actually look like?</p>
+      <p class="muted">Sometimes clarity changes the behavior. Sometimes accountability is needed. Sometimes circumstances have to change. And sometimes we've been trying to solve the wrong problem. That's usually where things get interesting.</p>
     </div>
   </section>
 
   <section class="about-section">
     <div class="wrap narrow-wide">
       <h2>Education &amp; training</h2>
-      <p class="muted">A working list, not a wall of framed paper:</p>
+      <p class="muted">My experience gave me questions. Training gave me more ways to investigate them. A working list, not a wall of framed paper:</p>
       <ul class="credential-list">
         <li>Certified Financial Educator</li>
         <li>Certified Financial Health Counselor</li>
@@ -105,7 +112,7 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer"><a class="footer-21-days" href="21-days.html">21 Days of Paying Attention</a>
   <a href="mailto:rukiyah@rukiyahpolk.com">rukiyah@rukiyahpolk.com</a>
   <span>&copy; 2026 Rukiyah Polk</span>
 </footer>
@@ -116,5 +123,6 @@ document.querySelector('.menu-toggle').addEventListener('click', function(){
 });
 </script>
 
+<script src="chatbot.js" defer></script>
 </body>
 </html>

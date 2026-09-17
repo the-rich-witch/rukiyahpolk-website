@@ -10,11 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
 <header class="site-header">
-  <a class="wordmark" href="index.html">Rukiyah Polk</a>
+  <a class="wordmark" href="index.html" aria-label="Rukiyah Polk"><span aria-hidden="true">♡♡𝑅𝓊𝓀𝒾𝓎𝒶𝒽♡♡</span></a>
   <button class="menu-toggle" aria-label="Menu">&#9776;</button>
   <nav>
     <a href="index.html">Home</a>
@@ -31,6 +32,7 @@
     <div class="wrap narrow-wide">
       <p class="kicker">Contact</p>
       <h1>Reach out.</h1>
+      <p class="scribble">If something I wrote made you think, “I want her in this conversation,” we should probably talk.</p>
       <p class="lede muted">For speaking, workshops, panels, interviews, media, and community or professional partnerships across any of the work below. Looking to actually work with one of the three organizations? Those inquiries go directly to the source.</p>
     </div>
   </section>
@@ -78,7 +80,7 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer"><a class="footer-21-days" href="21-days.html">21 Days of Paying Attention</a>
   <a href="mailto:rukiyah@rukiyahpolk.com">rukiyah@rukiyahpolk.com</a>
   <span>&copy; 2026 Rukiyah Polk</span>
 </footer>
@@ -89,5 +91,6 @@ document.querySelector('.menu-toggle').addEventListener('click', function(){
 });
 </script>
 
+<script src="chatbot.js" defer></script>
 </body>
 </html>
